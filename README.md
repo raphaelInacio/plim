@@ -17,7 +17,8 @@
 
 
 # Endereco Backend
-  localhsot:3003
+  localhost:3003/api/pedidos
+  
 # Endereco Front End
- localhsot:4000
+ http://localhost:4000/#!/home
 
