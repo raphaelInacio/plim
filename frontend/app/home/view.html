@@ -1,0 +1,60 @@
+
+
+<div class="col-md-12">
+    <div class="box box-info ">
+        <div class="box-header with-border">
+            <h3 class="box-title"> Resumo do Pedido </h3>
+        </div>
+        <div class="box-body">
+            <value-box grid="col-xs-12 col-md-3" color-class="bg-light-blue" value="Status" text="{{ctrl.pedido.status}}" icon-class="fa-list"></value-box>
+            <value-box grid="col-xs-12 col-md-3" color-class="bg-aqua" value="Carro" text="{{ctrl.pedido.cliente.carro.nome}} - {{ctrl.pedido.cliente.carro.ano}}" icon-class="fa-car"></value-box>
+            <value-box grid="col-xs-12 col-md-3" color-class="bg-green" value="Serviço" text="{{ctrl.pedido.descricao}} - R$ {{ctrl.pedido.valor | number : 2}}" icon-class="fa- fa-wrench"></value-box>
+            <value-box grid="col-xs-12 col-md-3" color-class="bg-yellow" value="Orçamentos" text="Quantidade: {{ctrl.pedido.orcamentos.length}}" icon-class="fa-money"></value-box>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="box box-info ">
+        <div class="box-header with-border">
+            <h3 class="box-title"> Pedido Detalhado </h3>
+        </div>
+        <div class="box-body">
+            <div class="nav-tabs-justified">
+        <ul class="nav nav-tabs">
+            <li ng-class="{active : ctrl.view}">
+                <a href="" data-target="#tabDadosPessoais" data-toggle="tab">
+                    <i class="fa fa-user"></i> Dados Pessoais
+                </a>
+            </li>
+            <li>
+                <a href="" data-target="#tabVeiculo" data-toggle="tab">
+                    <i class="fa fa-car"></i> Dados do Veículo
+                </a>
+            </li>
+            <li>
+                <a href="" data-target="#tabServico" data-toggle="tab">
+                    <i class="fa fa-wrench"></i> Detalhes do Serviço
+                </a>
+            </li>
+            <li>
+                <a href="" data-target="#tabOrcamento" data-toggle="tab">
+                    <i class="fa fa-money"></i> Orçamentos
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="tabDadosPessoais" ng-include="'home/detalhes/dados-pessoais.html'" ng-class="{active : ctrl.view}"></div>
+            <div class="tab-pane" id="tabVeiculo" ng-include="'home/detalhes/veiculo.html'"></div>
+            <div class="tab-pane" id="tabServico" ng-include="'home/detalhes/servicos.html'"></div>
+            <div class="tab-pane" id="tabOrcamento" ng-include="'home/detalhes/orcamentos.html'"></div>
+        </div>
+    </div>    
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+
+    
+</div>

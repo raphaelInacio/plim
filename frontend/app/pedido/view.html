@@ -1,0 +1,38 @@
+<value-box grid="col-xs-4" color-class="bg-aqua" value="Carro" text="{{ctrl.pedido.cliente.carro.nome}} - {{ctrl.pedido.cliente.carro.ano}}"
+    icon-class="fa-car">
+</value-box>
+<value-box grid="col-xs-4" color-class="bg-green" value="Serviço" text="{{ctrl.pedido.descricao}} - R$ {{ctrl.pedido.valor | number : 2}}" icon-class="fa- fa-wrench"></value-box>
+<value-box grid="col-xs-4" color-class="bg-yellow" value="Orçamentos" text="Quantidade: {{ctrl.pedido.orcamentos.length}}" icon-class="fa-money"></value-box>
+<div class="col-md-12">
+
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="" data-target="#tabList" data-toggle="tab">
+                    <i class="fa fa-user"></i> Dados Pessoais
+                </a>
+            </li>
+            <li>
+                <a href="" data-target="#tabCreate" data-toggle="tab">
+                    <i class="fa fa-car"></i> Dados do Veículo
+                </a>
+            </li>
+            <li>
+                <a href="" data-target="#tabUpdate" data-toggle="tab">
+                    <i class="fa fa-wrench"></i> Detalhes do Serviço
+                </a>
+            </li>
+            <li>
+                <a href="" data-target="#tabDelete" data-toggle="tab">
+                    <i class="fa fa-money"></i> Orçamentos
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="tabList" ng-include="'pedido/detalhes/dados-pessoais.html'" ng-class="{active : ctrl.view}"></div>
+            <div class="tab-pane" id="tabCreate" ng-include="'pedido/detalhes/veiculo.html'"></div>
+            <div class="tab-pane" id="tabUpdate" ng-include="'pedido/detalhes/servicos.html'"></div>
+            <div class="tab-pane" id="tabDelete" ng-include="'pedido/detalhes/orcamentos.html'"></div>
+        </div>
+    </div>
+</div>

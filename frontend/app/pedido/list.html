@@ -1,0 +1,41 @@
+
+<div class="col-xs-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title"> Pedidos </h3>
+        </div>
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Data Pedido</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr ng-repeat="pedido in ctrl.pedidos">
+                        <td> {{:: pedido.dataPedido | date:'dd-MM-yyyy' }} </td>
+                        <td> {{:: pedido.descricao}} </td>
+                        <td> R$ {{:: pedido.valor | number : 2 }} </td>
+                        <td> {{:: pedido.status}} </td>
+                        <td class="table-actions">
+
+                            <button ng-click="ctrl.visualizarPedido(pedido)" class="btn btn-info">
+                        <i class="fa fa-eye"></i>
+                    </button>
+
+                            <button ng-click="ctrl.editarPedido(pedido)" class="btn btn-warning">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+
+                            <button ng-click="ctrl.excluirPedido(pedido)" class="btn btn-danger">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

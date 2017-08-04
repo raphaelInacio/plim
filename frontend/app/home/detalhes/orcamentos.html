@@ -1,0 +1,49 @@
+<div class="content"  ng-repeat="orcamento in ctrl.pedido.orcamentos" >
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa  fa-money"></i> {{:: orcamento.fornecedor.nome }}
+            <small class="label label-success pull-right" ng-if="orcamento.status === 'EM_ANALISE'"><i class="fa fa-plus"></i> Novo orçamento </small>
+            <small class="label label-info pull-right" ng-if="orcamento.status === 'APROVADO'"><i class="fa fa-check"></i> Aprovado </small>
+            <small class="label label-danger pull-right" ng-if="orcamento.status === 'REPROVADO'"><i class="fa fa-remove"></i> Reprovado </small>
+          </h2>
+        </div>
+      </div>
+      
+      <div class="row invoice-info" ng-repeat="servico in ctrl.pedido.servicos"> 
+        
+        <div class="col-sm-12 invoice-col">
+          <strong> Detalhes do Serviço</strong>
+          <address>
+            Servico : {{:: orcamento.descricao }}<br>
+            Valor: R${{:: orcamento.valor | number : 2 }}<br>
+          </address>
+        </div>
+
+        <div class="col-sm-6 invoice-col">
+          <strong> Informaçoes de contato </strong>
+          <address>
+            Nome: {{:: orcamento.fornecedor.nome }}<br>
+            Telefone : {{:: orcamento.fornecedor.telefone }}<br>
+            Email: {{:: orcamento.fornecedor.email }}<br>
+          </address>
+        </div>
+
+        <div class="col-sm-6 invoice-col">
+         <strong> Endereço </strong>
+          <address>
+            Endereco: {{::orcamento.fornecedor.endereco.rua }}, Nº {{orcamento.fornecedor.endereco.numero}}, CEP {{orcamento.fornecedor.endereco.cep }} - Bairro {{orcamento.fornecedor.endereco.numero}}<br>
+            Cidade: {{:: orcamento.fornecedor.endereco.cidade }}<br>
+            Estado: {{:: orcamento.fornecedor.endereco.estado }}<br>
+          </address>
+        </div>
+      </div>
+
+
+      <div class="box-footer">
+        <button class="btn btn-info" ng-click="ctrl.aprovar(orcamento)"><i class="fa fa-check"></i> Aprovar</button>
+        <button class="btn btn-danger" ng-click="ctrl.reprovar(orcamento)"> <i class="fa fa-remove"></i> Reprovar</button>
+        <!--<button class="btn btn-success" ng-click="ctrl.mensagem(orcamento)"> <i class="fa fa-comment"></i> Mensagem</button>-->
+    </div>
+    
+</div>

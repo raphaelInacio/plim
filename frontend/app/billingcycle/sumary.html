@@ -1,0 +1,8 @@
+<div class="row">
+    <value-box grid="col-xs-12 col-md-4" color-class="bg-green" 
+    value="R$ {{ ctrl.credit | number : 2 }}" text="Total de Créditos" icon-class="fa-bank"></value-box>
+    <value-box grid="col-xs-12 col-md-4" color-class="bg-red" 
+    value="R$ {{ ctrl.debit | number : 2 }}" text="Total de Débitos" icon-class="fa-credit-card"></value-box>
+    <value-box grid="col-xs-12 col-md-4" color-class="bg-blue" 
+    value="R$ {{ ctrl.total | number : 2 }}" text="Valor Consolidado" icon-class="fa-bank"></value-box>
+</div>
