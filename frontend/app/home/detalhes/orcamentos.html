@@ -1,5 +1,5 @@
-<div class="content"  ng-repeat="orcamento in ctrl.pedido.orcamentos" >
-      <div class="row">
+<div class="content"  ng-repeat="orcamento in ctrl.pedido.orcamentos" ng-if="ctrl.pedido.orcamentos.lenght > 0" >
+      <div class="row" >
         <div class="col-xs-12">
           <h2 class="page-header">
             <i class="fa  fa-money"></i> {{:: orcamento.fornecedor.nome }}
@@ -10,7 +10,7 @@
         </div>
       </div>
       
-      <div class="row invoice-info" ng-repeat="servico in ctrl.pedido.servicos"> 
+      <div class="row invoice-info" ng-repeat="orcamento in ctrl.pedido.servicos"> 
         
         <div class="col-sm-12 invoice-col">
           <strong> Detalhes do Serviço</strong>
@@ -26,15 +26,6 @@
             Nome: {{:: orcamento.fornecedor.nome }}<br>
             Telefone : {{:: orcamento.fornecedor.telefone }}<br>
             Email: {{:: orcamento.fornecedor.email }}<br>
-          </address>
-        </div>
-
-        <div class="col-sm-6 invoice-col">
-         <strong> Endereço </strong>
-          <address>
-            Endereco: {{::orcamento.fornecedor.endereco.rua }}, Nº {{orcamento.fornecedor.endereco.numero}}, CEP {{orcamento.fornecedor.endereco.cep }} - Bairro {{orcamento.fornecedor.endereco.numero}}<br>
-            Cidade: {{:: orcamento.fornecedor.endereco.cidade }}<br>
-            Estado: {{:: orcamento.fornecedor.endereco.estado }}<br>
           </address>
         </div>
       </div>

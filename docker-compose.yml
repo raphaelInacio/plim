@@ -10,9 +10,9 @@ services:
    - 3003:3003
   command: bash -c "cd /backend && npm i && npm run dev"
   #command: bash -c "cd /backend && npm i && npm run production backend"
- frontend:
-  image: nginx:1.13
-  volumes: 
-   - ./frontend/public:/usr/share/nginx/html/
-  ports: 
-   - 4000:80
+# frontend:
+#  image: nginx:1.13
+#  volumes: 
+#   - ./frontend/public:/usr/share/nginx/html/
+#  ports: 
+#   - 4000:80

@@ -9,7 +9,7 @@ angular.module('app').config([
         })
         .state('pedidos', {
             url : "/pedidos",
-            templateUrl: "pedido/index.html"
+            templateUrl: "meus-pedidos/index.html"
         })
         .state('novo', {
             url : "/novo",

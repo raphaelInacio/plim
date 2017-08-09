@@ -59,7 +59,7 @@ const carro = new mongoose.Schema({
         require: true
     },
     ano: {
-        type: Number,
+        type: String,
         require: true
     }
 })

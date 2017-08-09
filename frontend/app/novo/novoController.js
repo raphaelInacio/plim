@@ -5,9 +5,9 @@
         .module('app')
         .controller('NovoController', NovoController);
 
-    NovoController.$inject = ['$http', 'ServicoService', 'CarroService', 'PedidoService', 'MessageFactory'];
+    NovoController.$inject = ['$http', 'ServicoService', 'CarroService', 'PedidoService', 'MessageFactory', 'PedidoFactory'];
 
-    function NovoController($http, ServicoService, CarroService, PedidoService, MessageFactory) {
+    function NovoController($http, ServicoService, CarroService, PedidoService, MessageFactory, PedidoFactory) {
 
         const vm = this;
         vm.view = true;
@@ -18,10 +18,8 @@
         vm.confirmar = true;
         vm.finalizar = false;
         vm.edit = false;
-        vm.pedido = {
-            servicos : [],
-            status : ['ABERTO']
-        };
+        vm.pedido = PedidoFactory;
+        vm.pedido.servicos = []
         vm.carro = {
             fabricante: "",
             modelo: "",
@@ -80,22 +78,29 @@
         vm.cancelarPedido = function () {
             vm.list = true;
             vm.form = false;
+            vm.pedido = PedidoFactory.pedido;
         };
 
         vm.criarPedido = function () {
             vm.pedidoService.criarPedido(vm.pedido, (res) => {
-                console.log('pedidoCriado')
+                vm.confirmar = true;
+                vm.edit = false;
+                vm.finalizar = false;
+                vm.init();
             });
         };
 
         vm.confirmarPedido = function () {
-            console.log(vm.pedido);
+            vm.pedido.cliente.carro.fabricante = vm.pedido.cliente.carro.fabricante.fipe_name;
+            vm.pedido.cliente.carro.nome = vm.pedido.cliente.carro.modelo.fipe_name;
+            vm.pedido.cliente.carro.ano = vm.pedido.cliente.carro.ano.name;
             vm.confirmar = false;
             vm.edit = true;
             vm.finalizar = true;
         };
 
         function init() {
+            vm.pedido = PedidoFactory;
             vm.obterServicos();
             vm.obterFabricantes();
         }

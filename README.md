@@ -1,15 +1,18 @@
 # PLIM MECANICOS
-É uma plataforma que conecta clientes a oficinas mecanicas
+  É uma plataforma que conecta clientes a oficinas mecanicas
 
 # Tecnologias
 - Mongo
 - Node.js
 - Angular 1.X
 - Docker
+- Gulp
 
 # Arquitetura
-  - SPA
-  - REST
+  - FrontEnd
+      SPA 
+  - Backend
+      REST
   - Containers
 
 # Rodar o Projeto com Docker
@@ -20,5 +23,5 @@
   localhost:3003/api/pedidos
   
 # Endereco Front End
- http://localhost:4000/#!/home
+ localhost:4000/#!/home
 

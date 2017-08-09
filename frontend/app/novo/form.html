@@ -31,7 +31,7 @@
                             <label>Fabricante</label>
                             <select aria-placeholder="Selecione"
                                ng-model="ctrl.pedido.cliente.carro.fabricante" class="form-control" style="width: 100%;"
-                               ng-options="fabricante.id as fabricante.fipe_name  for fabricante in ctrl.fabricantes"
+                               ng-options="fabricante as fabricante.fipe_name  for fabricante in ctrl.fabricantes"
                                ng-change="ctrl.obterModelo(ctrl.pedido.cliente.carro.fabricante)"
                                ng-init="ctrl.pedido.cliente.carro.fabricante = ctrl.fabricantes[1]">
                             </select>
@@ -43,7 +43,7 @@
                             <label>Modelo</label>
                             <select   
                                ng-model="ctrl.pedido.cliente.carro.modelo" class="form-control" style="width: 100%;"
-                               ng-options="modelo.id as modelo.name  for modelo in ctrl.modelos"
+                               ng-options="modelo as modelo.name  for modelo in ctrl.modelos"
                                ng-change="ctrl.obterAno(ctrl.pedido.cliente.carro.modelo)"
                                ng-readonly="ctrl.modeloStatus">
                             </select>
@@ -55,7 +55,7 @@
                             <label>Ano</label>
                             <select  
                             ng-model="ctrl.pedido.cliente.carro.ano" class="form-control" style="width: 100%;"
-                            ng-options="ano.id as ano.name  for ano in ctrl.anos"
+                            ng-options="ano as ano.name  for ano in ctrl.anos"
                             ng-readonly="ctrl.anoStatus">
                             </select>
                         </div>
@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-xs-12">
                             <button ng-show="ctrl.confirmar" class="btn btn-primary btn-lg" ng-click="ctrl.confirmarPedido()">Continuar</button>
-                            <button ng-show="ctrl.finalizar" class="btn btn-primary btn-lg" ng-click="ctrl.salvarPedido()">Finalizar Pedido</button>
+                            <button ng-show="ctrl.finalizar" class="btn btn-primary btn-lg" ng-click="ctrl.criarPedido()">Finalizar Pedido</button>
                             <button class="btn btn-default btn-lg" ng-click="ctrl.cancelarPedido()">Cancelar</button>
                         </div>
                         <div class="col-sm-4 col-xs-12 pull-right">
